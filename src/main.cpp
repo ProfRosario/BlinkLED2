@@ -1,18 +1,19 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include <Arduino.h>
+
+#define ONBOARD_LED  2
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+  pinMode(ONBOARD_LED,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  delay(1000);
+  digitalWrite(ONBOARD_LED,HIGH);
+  Serial.println("Hello World!");
+  delay(1000);
+  digitalWrite(ONBOARD_LED,LOW);
+  Serial.println("Goodbye World!");
 }
